@@ -1,9 +1,17 @@
-# algorithms-for-massive-datasets-unimi
+# Algorithms for Massive Datasets Project 
 
-This repository contains the python code and report required for the final
+This repository contains the python3 code and report required for the final
 project of the _Algorithms for Massive Datasets_ course @ UniMi - A.A 2025/2026.
 
 ## Deliverables
+
+### Project Choice
+
+The project presented in this repository refers to the following description.
+
+```
+The task is to implement from scratch at least two of the algorithms for stream analysis described during the course, interpreting either the set of all comments or of all articles in the dataset as a stream. You are free to decide the problem to be solved, e.g., counting the number of distinct users, or computing the second moment for the section of the article being commented, or building a Bloom Filter for the articles of a given section.
+```
 
 ### Source Code
 
@@ -13,8 +21,8 @@ certain parts of the code
 
 ### Documentation
 
-The documentation is provided as a *.pdf* file generated from LaTeX souce, said source(s) can be found in the relative subdirectory for inspection.
+The documentation is provided as a *.pdf* file generated from LaTeX souce, said source(s) can be found in the relative subdirectory (doc_src) for inspection.
 
-### Plagiarims and AI use statement
+## Plagiarims and AI use statement
 
 _I declare that this material, which I now submit for assessment, is entirely my own work and has not been taken from the work of others, save and to the extent that such work has been cited and acknowledged within the text of my work. I understand that plagiarism, collusion, and copying are grave and serious offences in the university and accept the penalties that would be imposed should I engage in plagiarism, collusion or copying. This assignment, or any part of it, has not been previously submitted by me or any other person for assessment on this or any other course of study. No generative AI tool has been used to write the code or the report content._
