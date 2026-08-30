@@ -21,7 +21,8 @@ certain parts of the code
 
 ### Documentation
 
-The documentation is provided as a *.pdf* file generated from LaTeX souce, said source(s) can be found in the relative subdirectory (doc_src) for inspection.
+The documentation is provided as a *.pdf* file generated from Typst souce, said source(s) can be found in the relative subdirectory (docsrc) for inspection.
+Typst is a modern typesetting framework that provides the same functionalities as LaTeX (and more).
 
 ## Plagiarims and AI use statement
 
