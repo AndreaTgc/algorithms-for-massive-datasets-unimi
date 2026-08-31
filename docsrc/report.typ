@@ -4,7 +4,8 @@
   title : "Andrea Colombo - Algorithms for Massive Datasets course project - A.A 2025/2026",
   authors: ("Andrea Colombo",),
   abstract: [
-    This report contains the 
+    This report contains the documentation related to the project submission for the _Algorithms for Massive
+    Datasets_ course.
   ],
 )
 
