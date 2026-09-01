@@ -8,17 +8,23 @@
   abstract: [
     This report contains the documentation related to the project submission for the _Algorithms for Massive
     Datasets_ course.
-    Taught by #link("https://malchiodi.di.unimi.it/it")[_Dario Malchiodi_] at _Università degli studi di Milano_.\
-    We present the implementation of two stream analysis algorithms: Flajolet-Martin and Alon-Matias-Szegedy, starting from the theory behind them and going all the way through the implementation choices and experimental results.
-  ],
+  Taught by #link("https://malchiodi.di.unimi.it/it")[_Dario Malchiodi_] at _Università degli studi di Milano_.\
+  We present the implementation of two stream analysis algorithms: Flajolet-Martin and Alon-Matias-Szegedy, starting from the theory behind them and going all the way through the implementation choices and experimental results.
+],
 )
 
-= Introduction
+= Introduction <intro>
 \
 The analysis of massive datasets has become an increasingly important problem
 in the later years. These scenarios pose significant challenges due to the sheer amount of data to be proceseed; in most cases, storing the entire dataset
 in memory is not feasible. \
-Stream analysis algorithms address this issue by processing the dataset sequentially, using limited amounts of memory and providing estimations about the stream properties we are interested in.
+Stream analysis algorithms address this issue by processing the dataset sequentially, using
+limited amounts of memory and providing estimations about the stream properties we are
+interested in.
+Since these algorithms do not need to store the entirety of the stream in memory, they are used
+across a moltitude of domains and hardware, ranging from huge server rigs to tiny embedded
+microcontrollers.
+
 The algorithms and tasks we are going to explore are the following:
 
 - Using the _Flajolet-Martin Algorithm_ @flajolet1985probabilistic to produce
@@ -31,6 +37,20 @@ The algorithms and tasks we are going to explore are the following:
 This project was developed using _Google Colab_ as the main computation environment. The Jupyter Notebook submitted alongside this project may require some modifications before being run in a local environment. \
 Below is a brief description of the computational resources available on the 
 CoLab runtime and the versions of the libraries used in this project:
+
+
+- *CPU*: Intel Xeon CPU with 2 vCPUs (virtual CPUs) and 13GB of RAM. 
+- *Python Version*: 3.13.15 (built with GCC 11.4.0)
+- *PySpark Version*: 4.0.4 
+- *xxHash Version*: 4.0.1
+
+#align(center)[
+#box(
+  stroke: black,
+  height: 2em,
+  inset: (top: 0.5em, bottom: 0.5em, left: 0.5em, right: 0.5em),
+  [Please note that these versions are correct at the time of writing: #datetime.today().display().]
+)]
 
 = Dataset Description
 \
@@ -104,9 +124,57 @@ The space complexity is $O(k)$ instead, we only need to store a constant amount 
 trailing zeros counts; the precise memory usage depends on how many hash function we decide to use for the algorithm. \
 
 == Implementation Details
+
+=== Hash Function Choice
 \
+The hash function used in the submitted implementation is #link("https://xxhash.com/")[xxhash],
+an extremely fast non cryptographic hashing algorithm. In particular, this implementation uses
+the xxh3 64 bits version, xxhash is one of the most used hashing algorithms for non
+cryptographic uses in real world use cases (PySpark uses it too).
+
+= Algorithm implementation
+
+#code-block(
+  lang: "python",
+  ```python
+  def ctz(x):
+      if x == 0:
+          return 64
+      return (x & -x).bit_length() - 1
+
+  def hash64bits(value, seed):
+      return xxhash.xxh64(value.encode("utf-8"), seed=seed).intdigest()
+
+  def fm_partition(it):
+      registers = [0] * FM_NUM_HASHES
+      for user in it:
+          for i in range(FM_NUM_HASHES):
+              bits = hash64bits(user, i)
+              r = ctz(bits)
+              if r > registers[i]:
+                  registers[i] = r
+
+      yield registers
+  ```
+)
+
 == Experimental Results
 \
+One of the most important questions ask ourselves when implementing this algorithm is the following:
+
+#align(center)[
+#box(
+  stroke: black,
+  height: 2em,
+  inset: (top: 0.5em, bottom: 0.5em, left: 0.5em, right: 0.5em),
+  [How many different hash functions do we use?]
+)]
+
+This is a very important questions because it requires us to think about the tradeoffs between
+compotational expense and accuracy for our specific use case. \
+Choosing to use more hash functions will result in more accurate estimations at the expense of
+performance. \
+
 = AMS Algorithm
 \
 == Space/Time Complexity

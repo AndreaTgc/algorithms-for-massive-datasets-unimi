@@ -70,7 +70,7 @@
     [
       #set align(left)
       #set par(justify: false)
-      #set text(font: "Courier New", size: 9pt)
+      // #set text(font: "Courier New", size: 9pt)
       #if lang != none [
         #text(
           fill: rgb("#666666"),
