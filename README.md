@@ -5,14 +5,19 @@ project of the _Algorithms for Massive Datasets_ course @ UniMi - A.A 2025/2026.
 
 ## Deliverables
 
-- *Run on CoLab*: <a href="https://colab.research.google.com/github/AndreaTgc/algorithms-for-massive-datasets-unimi/blob/main/project.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+- *Run on CoLab*:   <a href="https://colab.research.google.com/github/AndreaTgc/algorithms-for-massive-datasets-unimi/blob/main/project.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ### Project Choice
 
 The project presented in this repository refers to the following description.
 
 ```
-The task is to implement from scratch at least two of the algorithms for stream analysis described during the course, interpreting either the set of all comments or of all articles in the dataset as a stream. You are free to decide the problem to be solved, e.g., counting the number of distinct users, or computing the second moment for the section of the article being commented, or building a Bloom Filter for the articles of a given section.
+The task is to implement from scratch at least two of the algorithms for
+stream analysis described during the course, interpreting either the set
+of all comments or of all articles in the dataset as a stream. You are free
+to decide the problem to be solved, e.g., counting the number of distinct
+users, or computing the second moment for the section of the article being
+commented, or building a Bloom Filter for the articles of a given section.
 ```
 
 ### Source Code
