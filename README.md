@@ -5,6 +5,8 @@ project of the _Algorithms for Massive Datasets_ course @ UniMi - A.A 2025/2026.
 
 ## Deliverables
 
+- *Run on CoLab*: <a href="https://colab.research.google.com/github/AndreaTgc/algorithms-for-massive-datasets-unimi/blob/main/project.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 ### Project Choice
 
 The project presented in this repository refers to the following description.
