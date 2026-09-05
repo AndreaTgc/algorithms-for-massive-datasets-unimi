@@ -5,8 +5,6 @@ project of the _Algorithms for Massive Datasets_ course @ UniMi - A.A 2025/2026.
 
 ## Deliverables
 
-- *Run on CoLab*:   <a href="https://colab.research.google.com/github/AndreaTgc/algorithms-for-massive-datasets-unimi/blob/main/project.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
-
 ### Project Choice
 
 The project presented in this repository refers to the following description.
@@ -25,6 +23,8 @@ commented, or building a Bloom Filter for the articles of a given section.
 The source code is provided as a Python3 notebook and is meant to be executed primarily inside _Google CoLab_,
 running the code locally may require the user to install some libraries or modify
 certain parts of the code
+
+<a href="https://colab.research.google.com/github/AndreaTgc/unimi-project-algorithms-for-massive-datasets/blob/main/project.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ### Documentation
 
